@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #F7C3B1 #F7C3B1 #F7C3B1 #F7C3B1 #F7C3B1;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flowershop.OrderController">
+   <children>
+      <Pane layoutX="35.0" layoutY="19.0" prefHeight="541.0" prefWidth="950.0" styleClass="column-header-background" stylesheets="@main.css">
+         <children>
+            <Label layoutX="14.0" layoutY="94.0" prefHeight="27.0" prefWidth="126.0" text="Barcode">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtbarcode" layoutX="160.0" layoutY="95.0" onKeyTyped="#handlescanproduct" prefHeight="25.0" prefWidth="232.0" />
+            <Label layoutX="14.0" layoutY="119.0" prefHeight="27.0" prefWidth="126.0" text="Product Name">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="173.0" prefHeight="27.0" prefWidth="126.0" text="Quantity">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtprodname" layoutX="160.0" layoutY="120.0" prefHeight="25.0" prefWidth="232.0" />
+            <TextField fx:id="txtqty" layoutX="160.0" layoutY="174.0" onAction="#handleorder" prefHeight="25.0" prefWidth="232.0" />
+            <Button fx:id="savebtn" layoutY="486.0" mnemonicParsing="false" onAction="#savebtnclick" prefHeight="41.0" prefWidth="66.0" stylesheets="@main.css" text="SAVE">
+               <styleClass>
+                  <String fx:value="button2" />
+                  <String fx:value="button2" />
+               </styleClass>
+            </Button>
+            <Button fx:id="updatebtn" layoutX="77.0" layoutY="486.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="66.0" stylesheets="@main.css" text="UPDATE">
+               <styleClass>
+                  <String fx:value="button2" />
+                  <String fx:value="button2" />
+               </styleClass>
+            </Button>
+            <Button fx:id="deletebtn" layoutX="160.0" layoutY="486.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="66.0" stylesheets="@main.css" text="DELETE">
+               <styleClass>
+                  <String fx:value="button2" />
+                  <String fx:value="button2" />
+               </styleClass>
+            </Button>
+            <Button fx:id="clearbtn" layoutX="243.0" layoutY="486.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="66.0" styleClass="button2" stylesheets="@main.css" text="CLEAR" />
+            <TableView fx:id="TableOrder" layoutX="424.0" layoutY="94.0" prefHeight="391.0" prefWidth="525.0" style="-fx-background-color: #FEA3AA;" stylesheets="@main.css">
+               <columns>
+                  <TableColumn fx:id="colorderNo" prefWidth="65.0" text="Order No" />
+                  <TableColumn fx:id="colprodid" prefWidth="78.0" text="Product Id" />
+                  <TableColumn fx:id="colbarcode" prefWidth="67.0" text="Barcode" />
+                  <TableColumn fx:id="colprodname" prefWidth="92.0" text="Product Name" />
+                  <TableColumn fx:id="colprice" prefWidth="67.0" text="Price" />
+                  <TableColumn fx:id="colqty" prefWidth="73.0" text="Quantity" />
+                  <TableColumn fx:id="colamnt" prefWidth="82.0" text="Amount" />
+               </columns>
+               <styleClass>
+                  <String fx:value="column-header-background" />
+                  <String fx:value="mainFxmlClass" />
+                  <String fx:value="filler" />
+                  <String fx:value="corner" />
+               </styleClass>
+            </TableView>
+            <Label alignment="CENTER" layoutX="357.0" prefHeight="67.0" prefWidth="144.0" text="Orders">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="146.0" prefHeight="27.0" prefWidth="126.0" text="Price">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtprice" layoutX="160.0" layoutY="147.0" prefHeight="25.0" prefWidth="232.0" />
+            <TextField fx:id="txtinvoice" layoutX="182.0" layoutY="375.0" prefHeight="25.0" prefWidth="232.0" />
+            <DatePicker fx:id="orderdate" layoutX="182.0" layoutY="411.0" prefHeight="25.0" prefWidth="232.0" />
+            <Label fx:id="lblgrandtotal" layoutX="893.0" layoutY="498.0" text="0.0" />
+            <Label layoutX="821.0" layoutY="498.0" text="Total Bill" />
+            <Button fx:id="btnprintinvoice" layoutX="424.0" layoutY="494.0" mnemonicParsing="false" onAction="#handleprintinvoice" styleClass="button2" text="Print Invoice" />
+         </children>
+      </Pane>
+      <Button fx:id="backbtn" layoutX="4.0" layoutY="4.0" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#backbtnpressed" prefHeight="10.0" prefWidth="10.0" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons8_back_to_50px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

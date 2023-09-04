@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #F7C3B1 #F7C3B1 #F7C3B1 #F7C3B1 #F7C3B1;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flowershop.ProfitLossController">
+   <children>
+      <Pane layoutX="35.0" layoutY="19.0" prefHeight="541.0" prefWidth="950.0" styleClass="column-header-background" stylesheets="@main.css">
+         <children>
+            <TextField fx:id="txtbarcode" layoutX="349.0" layoutY="194.0" onKeyTyped="#handlescanproduct" prefHeight="25.0" prefWidth="232.0" />
+            <Label layoutX="193.0" layoutY="193.0" prefHeight="27.0" prefWidth="126.0" text="Profit ">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="349.0" layoutY="14.0" prefHeight="67.0" prefWidth="232.0" text="Profit &amp; Loss">
+               <font>
+                  <Font name="System Bold" size="33.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="orderdate" layoutX="349.0" layoutY="146.0" prefHeight="25.0" prefWidth="232.0" />
+            <Label layoutX="193.0" layoutY="145.0" prefHeight="27.0" prefWidth="126.0" text="Date">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Button fx:id="backbtn" layoutX="4.0" layoutY="4.0" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" onAction="#backbtnpressed" prefHeight="10.0" prefWidth="10.0" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons8_back_to_50px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,29 @@
+
+.mainFxmlClass {
+
+}
+.button{
+    
+   -fx-background-color:#E77471;
+        -fx-background-radius: 30 0 0 30;
+}
+.button2{
+    -fx-background-color:  #E77471;
+     -fx-background-radius: 0 0 0 0;   
+}
+.button:hover{
+    -fx-background-color: #F75D59;
+    -fx-background-radius: 30 0 0 30;
+}
+.button2:hover{
+    -fx-background-color: #F75D59;
+    -fx-background-radius: 0 0 0 0;
+}
+.button:pressed{
+    -fx-background-color: #E77471;
+    -fx-background-radius: 30 0 0 30;
+}
+.button2:pressed{
+    -fx-background-color: #E77471;
+    -fx-background-radius: 0 0 0 0;
+}
